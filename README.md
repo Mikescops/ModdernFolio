@@ -17,7 +17,9 @@ Theme Installation :
 
 Homepage configuration :
 
-To show your own post type on the homepage you need to modify the index.twig template on line 16, change "articles" by what you want.
+To show your own post type on the homepage you need to modify the index.twig template on line 16, change "entries" by what you want.
+
+To configure your profile header, create an about page > upload your profile picture and add your description in the textarea.
 
 
 This theme is fully responsive, so you don't need any mobile template.
