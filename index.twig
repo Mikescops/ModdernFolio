@@ -1,0 +1,65 @@
+{% include '_header.twig' %}
+
+  <!-- Main Grid Section -->
+
+
+  <div class="row" style="margin-bottom: -20px; margin-top: 20px;">
+
+    
+    <div class="large-2 columns" style="position: center;">
+{% setcontent about = 'page/about' %}
+
+{% if about.image!="" %}
+        <p style="text-align: center;">
+          <img src="{{ thumbnail(about.image, 160, 160) }}"/>
+        </p>
+{% endif %}
+    </div>
+    <div class="large-4 columns">
+      <div style="margin-top: 5px;">
+        {% setcontent about = "page/about" %}
+        {% if about.title is defined %}
+        <h5>{{ about.title }}</h5>
+            {{ about.teaser }}
+<br>
+        {% else %}
+
+            <h5>Alas, no about!</h5>
+
+            <p>If there was a Page with 'about' for a slug, it would've been shown
+                here. But there isn't one, so that's why you're seeing this
+                placeholder.</p>
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  </div>
+
+  <div class="row" style="margin-top: -20px;">
+{% setcontent records = "entries/latest/9" allowpaging %}
+        {% for record in records %}
+    <div class="large-4 columns">
+      <div class="panel" style="text-align: center;">
+        {% if record.image!="" %}
+        <a href="{{ record.link }}">
+          <img src="{{ thumbnail(record.image, 800, 600) }}" style="padding: 0em;"/>
+        </a>
+        {% endif %}
+        <h3 style="margin-bottom: 0px;">{{ record.title }}</h3>
+        <p style="margin-bottom: 0px;">{{ record.excerpt(100) }}</p>
+        <a href="{{ record.link }}" class="button radius tiny">Voir plus ...</a>
+        <br>
+      </div>
+    </div>
+
+    {% endfor %}
+    
+  </div>
+
+  <!-- End Grid Section -->
+
+{% include '_footer.twig' %}

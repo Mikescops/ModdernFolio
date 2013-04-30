@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>      {% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
+      {{ app.config.general.sitename }}
+      {% if record.title is not defined and app.config.general.payoff is defined %} | {{ app.config.general.payoff }}{% endif %}</title>
+
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="{{ paths.theme }}css/normalize.css">
+  <link rel="stylesheet" href="{{ paths.theme }}css/foundation.css">
+  
+
+  <script src="{{ paths.theme }}js/vendor/custom.modernizr.js"></script>
+  <script src="{{ paths.theme }}/js/foundation.min.js"></script>
+
+      {# Fancy Box Loader #}
+    <script src="{{ paths.app }}view/lib/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ paths.app }}view/lib/fancybox/jquery.fancybox.css">
+
+</head>
+<body>
+
+  <!-- Check for Zepto support, load jQuery if necessary -->
+<script>
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>
+
+<script>
+  $(function(){
+    $(document).foundation();    
+  })
+</script>
+
+<div class="contain-to-grid">
+  <!-- Header and Nav -->
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="{{ paths.root }}">{{ app.config.general.sitename }}
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Nav Section -->
+      <ul class="left">
+
+        {{ menu('main', '_sub_menu.twig') }}
+
+          </ul>
+        </li>
+       
+      </ul>
+      <ul class="right">
+      {% include '_sub_searchbox.twig' %}
+    </ul>
+    </section>
+
+  </nav>
+</div>
+
+  <!-- End Header and Nav -->
