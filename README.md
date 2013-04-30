@@ -1,7 +1,7 @@
-bootstrapbolttheme
+
 ==================
 
-Bootstrap Bolt Theme
+ModdernFolio Bolt Theme
 
 This theme was created by Mike Scops at pixelswap.fr for Bolt CMS. Feel free to use it for your projects !*
 
