@@ -3,11 +3,11 @@
 <div class="row" style="margin-top: 25px;">
 
         {% for record in records %}
-    <div class="large-4 columns">
+    <div class="large-6 columns">
       <div class="panel" style="text-align: center;">
         {% if record.image!="" %}
         <a href="{{ record.link }}">
-          <img src="{{ thumbnail(record.image, 400, 300) }}" style="padding: 0em;"/>
+          <img src="{{ thumbnail(record.image, 800, 600) }}" style="padding: 0em;"/>
         </a>
         {% endif %}
         <h3 style="margin-bottom: 0px;">{{ record.title }}</h3>
