@@ -3,10 +3,10 @@
   <!-- Main Grid Section -->
 
 
-  <div class="row" style="margin-bottom: -20px; margin-top: 20px;">
+  <div class="row" style="margin-top: 20px;">
 
     
-    <div class="large-2 columns" style="position: center;">
+    <div class="large-2 columns">
 {% setcontent about = 'page/about' %}
 
 {% if about.image!="" %}
@@ -15,7 +15,7 @@
         </p>
 {% endif %}
     </div>
-    <div class="large-4 columns">
+    <div class="large-8">
       <div style="margin-top: 5px;">
         {% setcontent about = "page/about" %}
         {% if about.title is defined %}
@@ -35,24 +35,21 @@
     </div>
   </div>
 
-  <hr>
-
   </div>
 
-  <div class="row" style="margin-top: -20px;">
+  <div class="row">
 {% setcontent records = "entries/latest/6" allowpaging %}
         {% for record in records %}
     <div class="large-6 columns">
       <div class="panel" style="text-align: center;">
         {% if record.image!="" %}
         <a href="{{ record.link }}">
-          <img src="{{ thumbnail(record.image, 800, 600) }}" style="padding: 0em;"/>
+          <img style="margin-bottom: 10px;"" src="{{ thumbnail(record.image, 800, 600) }}" style="padding: 0em;"/>
         </a>
         {% endif %}
-        <h3 style="margin-bottom: 0px;">{{ record.title }}</h3>
-        <p style="margin-bottom: 0px;">{{ record.excerpt(100) }}</p>
+        <h3>{{ record.title }}</h3>
+        <p>{{ record.excerpt(100) }}</p>
         <a href="{{ record.link }}" class="button radius tiny">View more ...</a>
-        <br>
       </div>
     </div>
 
