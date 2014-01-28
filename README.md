@@ -1,12 +1,14 @@
 
+ModdernFolio Bolt Theme
 ==================
 
-ModdernFolio Bolt Theme
 
-This theme was created by Mike Scops at pixelswap.fr for Bolt CMS. Feel free to use it for your projects !*
+This theme was created by Corentin at pixelswap.fr for Bolt CMS. Feel free to use it for your projects !*
 
 
-Theme Installation :
+Theme Installation
+==================
+
 
 1/ Upload all the files in your theme directory.
 
@@ -15,7 +17,9 @@ Theme Installation :
 3/ And voilà !
 
 
-Homepage configuration :
+Homepage configuration
+==================
+
 
 To show your own post type on the homepage you need to modify the index.twig template on line 16, change "entries" by what you want.
 
