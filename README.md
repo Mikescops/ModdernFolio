@@ -1,9 +1,10 @@
-
 ModdernFolio Bolt Theme
 ==================
 
 
 This theme was created by Corentin at pixelswap.fr for Bolt CMS. Feel free to use it for your projects !*
+
+![Screenshot](screenshot.jpg)
 
 
 Theme Installation
