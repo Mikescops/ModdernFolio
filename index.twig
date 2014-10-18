@@ -41,13 +41,13 @@
 {% setcontent records = "entries/latest/6" allowpaging %}
         {% for record in records %}
     <div class="large-6 columns">
-      <div class="panel" style="text-align: center;">
+      <div class="panel" style="text-align: center; height: 440px; max-height: 440px; overflow: hidden;">
         {% if record.image!="" %}
-        <a href="{{ record.link }}">
-          <img style="margin-bottom: 10px;"" src="{{ thumbnail(record.image, 800, 600) }}" style="padding: 0em;"/>
+        <a href="{{ record.link }}" style="max-height: 320px; ">
+          <img style="margin-bottom: 10px; padding: 0;" src="{{ thumbnail(record.image, 500, 280) }}"/>
         </a>
         {% endif %}
-        <h3>{{ record.title }}</h3>
+        <h3>{{ record.title|excerpt(25) }} </h3>
         <p>{{ record.excerpt(100) }}</p>
         <a href="{{ record.link }}" class="button radius tiny">View more ...</a>
       </div>
