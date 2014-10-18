@@ -1,0 +1,16 @@
+{
+    "name": "mikescops/moddernfolio",
+    "description": "ModdernFolio is a basic portfolio theme, to showcase anything you want. ",
+    "type": "bolt-theme",
+    "keywords": ["theme", "foundation", "sass", "portfolio", "showcase"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Scops / Corentin",
+            "email": "mikescops@pixelswap.fr"
+        }
+    ]
+}
