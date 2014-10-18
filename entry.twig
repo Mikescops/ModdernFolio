@@ -9,7 +9,7 @@
                 {{ record.video.responsive }}
             </div>
                 {% else %}
-                {% if record.image!="" %}
+                {% if record.image is defined and record.image is not empty %}
                 <div class="four columns imageholder" style="padding-left: 0; padding-right: 0;">
                     <a href="{{ image(record.image) }}" class="fancybox">
                         <img src="{{ thumbnail(record.image, 1000, 700) }}" style="padding: 0em;">
@@ -19,8 +19,20 @@
         {% endif %}
 
         <div class="four columns imageholder" style="padding-top: 12px;">
-                    {{ disqus() }}
-                     </div>   
+
+            {% if Disqus is defined %}
+                {# Show the Disqus comment box, if the Disqus extension is installed .. #}
+                <h4>Leave a comment</h4>
+                {{ Disqus.disqus() }}
+                <hr>
+            {% elseif FacebookComments is defined %}
+                {# Show the Facebook comment box, if Facebookcomments extension is installed .. #}
+                <h4>Leave a comment</h4>                
+                {{ FacebookComments.facebookComments() }}            
+                <hr>
+            {% endif %}
+
+         </div>   
     </div>
 
     <div class="large-4 columns" style="padding-left: 0; padding-right: 0;">
