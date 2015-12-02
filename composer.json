@@ -16,8 +16,8 @@
     "extra": {
         "bolt-screenshots": [
             "screenshots/home.png",
-            "screenshots/splash.png",
-            "screenshots/footer.png"
+            "screenshots/internal.png",
+            "screenshots/listing.png"
         ],
         "bolt-icon": "icon-moddernfolio.png"
     }
