@@ -23,31 +23,55 @@
 
 </head>
 <body>
-
-<div class="contain-to-grid">
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="{{ url('homepage') }}">{{ app.config.get('general/sitename') }}</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="left">
-
-        {{ menu('main', '_sub_menu.twig') }}
-
-   </ul>
-       
-      </ul>
-      <ul class="right">
-      {% include '_sub_searchbox.twig' %}
+  <div class="contain-to-grid">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="{{ url('homepage') }}">{{ app.config.get('general/sitename') }}</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
-    </section>
 
-  </nav>
-</div>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="left">
 
-  <!-- End Header and Nav -->
+          {{ menu('main', '_sub_menu.twig') }}
+
+     </ul>
+         
+        </ul>
+        <ul class="right">
+        {% include '_sub_searchbox.twig' %}
+      </ul>
+      </section>
+
+    </nav>
+  </div>
+  <!-- End Header -->
+
+  {% block main %}{% endblock main %}
+
+  <!-- FOOTER -->
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr>
+      <div class="row">
+        <div class="large-6 columns">
+          <p> Themed by <a href="https://pixelswap.fr/" target="_blank">Corentin Mors</a> &copy; Bolt CMS </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+      <!-- End Footer -->
+
+
+  <script src="{{ asset('js/vendor/jquery.js', 'theme') }}"></script>
+  <script src="{{ asset('js/foundation.min.js', 'theme') }}"></script>
+  <script>
+    $(document).foundation();
+  </script>
+
+</body>
+</html>
