@@ -2,12 +2,13 @@
 
 <!-- Main Grid Section -->
 
+{% setcontent records = "entries/latest/6" allowpaging %}
+{% setcontent about = 'page/about' %}
+
 <div class="row" style="margin-top: 20px;">
 
     
   <div class="medium-2 large-2 columns">
-  
-  {% setcontent about = 'page/about' %}
 
   {% if about.image is defined %}
     <p style="text-align: center;">
@@ -36,7 +37,6 @@
 </div>
 
 <div class="row">
-{% setcontent records = "entries/latest/6" allowpaging %}
   {% for record in records %}
     <div class="large-6 columns">
       <div class="panel" style="text-align: center; height: 440px; max-height: 440px; overflow: hidden;">
