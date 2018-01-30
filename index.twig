@@ -1,45 +1,43 @@
 {% include '_header.twig' %}
 
-  <!-- Main Grid Section -->
+<!-- Main Grid Section -->
 
-
-  <div class="row" style="margin-top: 20px;">
+<div class="row" style="margin-top: 20px;">
 
     
-    <div class="medium-2 large-2 columns">
-{% setcontent about = 'page/about' %}
+  <div class="medium-2 large-2 columns">
+  
+  {% setcontent about = 'page/about' %}
 
-{% if about.image is defined %}
-        <p style="text-align: center;">
-          <img src="{{ thumbnail(about.image, 160, 160) }}"/>
-        </p>
-{% endif %}
-    </div>
-    <div class="large-8 medium-8">
-      <div style="margin-top: 5px;">
-        {% setcontent about = "page/about" %}
-        {% if about.title is defined %}
-        <h5>{{ about.title }}</h5>
-            {{ about.teaser }}
-        <br>
-        {% else %}
+  {% if about.image is defined %}
+    <p style="text-align: center;">
+      <img src="{{ thumbnail(about.image, 160, 160) }}"/>
+    </p>
+  {% endif %}
+  </div>
+  <div class="large-8 medium-8">
+    <div style="margin-top: 5px;">
+      {% setcontent about = "page/about" %}
+      {% if about.title is defined %}
+      <h5>{{ about.title }}</h5>
+          {{ about.teaser }}
+      <br>
+      {% else %}
 
-            <h5>Alas, no about!</h5>
+        <h5>Alas, no about!</h5>
 
-            <p>If there was a Page with 'about' for a slug, it would've been shown
-                here. But there isn't one, so that's why you're seeing this
-                placeholder.</p>
+        <p>If there was a Page with 'about' for a slug, it would've been shown
+            here. But there isn't one, so that's why you're seeing this
+            placeholder.</p>
 
-        {% endif %}
-      </div>
+      {% endif %}
     </div>
   </div>
+</div>
 
-  </div>
-
-  <div class="row">
+<div class="row">
 {% setcontent records = "entries/latest/6" allowpaging %}
-        {% for record in records %}
+  {% for record in records %}
     <div class="large-6 columns">
       <div class="panel" style="text-align: center; height: 440px; max-height: 440px; overflow: hidden;">
         {% if record.image!="" %}
@@ -53,10 +51,10 @@
       </div>
     </div>
 
-    {% endfor %}
+  {% endfor %}
     
-  </div>
+</div>
 
-  <!-- End Grid Section -->
+<!-- End Grid Section -->
 
 {% include '_footer.twig' %}
