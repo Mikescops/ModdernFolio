@@ -1,9 +1,9 @@
 {% include '_header.twig' %}
 
 <div class="container-fluid" style="margin-top: 100px;">
-      <div class="row-fluid">
+      <div class="row">
 
-        <div class="span8">
+        <div class="large-12 columns">
 
         <h2>{{ record.title }}</h2>
 
@@ -63,12 +63,6 @@
                     {{ attribute(record, key)|join(", ") }}
                 </p>
 
-            {% elseif record.fieldtype(key) not in ['templateselect'] and value != "" %}
-
-                <p><strong>{{ key }}: </strong>
-                    {{ attribute(record, key) }}
-                </p>
-
             {%  endif %}
 
 
@@ -101,15 +95,6 @@
                 </p>
             {% endif %}
 			</div>
-
-            <div class="span4">
-          <div class="well sidebar-nav">
-            
-            {% include '_aside.twig' %}
-
-          </div><!--/.well -->
-        </div><!--/span-->
-
     </div>
     <br>   <br>
     <hr>
